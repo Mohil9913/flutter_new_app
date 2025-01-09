@@ -40,22 +40,15 @@ class LanguageController extends GetxController {
               Get.back();
             },
           ),
+          ListTile(
+            title: Text('Gujarati'),
+            onTap: () {
+              changeLanguage('gu');
+              Get.back();
+            },
+          ),
         ],
       ),
     );
   }
-}
-
-class AppTranslations extends Translations {
-  @override
-  Map<String, Map<String, String>> get keys => {
-        'en': {
-          'hello': 'Hello',
-          'Flutter Minimalist App': 'Flutter Minimalist App',
-        },
-        'hi': {
-          'hello': 'नमस्कार', // Namaskar in Hindi
-          'Flutter Minimalist App': 'फ्लटर मीनिमलिस्ट एप्प',
-        },
-      };
 }

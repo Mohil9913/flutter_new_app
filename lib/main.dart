@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:new_app/bindings/initial_binding.dart';
-import 'package:new_app/controller/language_controller.dart';
+import 'package:new_app/translator/app_translations.dart';
 import 'package:new_app/view/home_screen.dart';
+import 'package:new_app/view/open_news.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Minimalist App',
+      title: 'News App',
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
       themeMode: isDarkMode ? ThemeMode.dark : ThemeMode.light,
@@ -32,7 +33,10 @@ class MyApp extends StatelessWidget {
       translations: AppTranslations(),
       initialBinding: InitialBinding(),
       initialRoute: '/home',
-      getPages: [GetPage(name: '/home', page: () => HomeScreen())],
+      getPages: [
+        GetPage(name: '/home', page: () => HomeScreen()),
+        GetPage(name: '/open_news', page: () => OpenNews()),
+      ],
     );
   }
 }

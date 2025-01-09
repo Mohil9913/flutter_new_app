@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -27,6 +28,7 @@ class ThemeController extends GetxController {
         mainAxisSize: MainAxisSize.min,
         children: [
           ListTile(
+            leading: Icon(CupertinoIcons.sun_max),
             title: Text('Light'),
             onTap: () {
               toggleTheme(false);
@@ -34,6 +36,7 @@ class ThemeController extends GetxController {
             },
           ),
           ListTile(
+            leading: Icon(CupertinoIcons.moon),
             title: Text('Dark'),
             onTap: () {
               toggleTheme(true);
@@ -41,6 +44,7 @@ class ThemeController extends GetxController {
             },
           ),
           ListTile(
+            leading: Icon(Icons.brightness_auto_outlined),
             title: Text('System'),
             onTap: () {
               final brightness =
